@@ -10,6 +10,8 @@ public class Line implements GeometricalForm {
     private int y1;
     private int x2;
     private int y2;
+    private int area;
+    private int perimeter;
     private Color color;
 
     public Line(int x1, int y1, int x2, int y2, Color c) throws IllegalPositionException {
@@ -17,15 +19,13 @@ public class Line implements GeometricalForm {
         this.y1 = y1;
         this.x2 = x2;
         this.y2 = y2;
+        this.area = getArea();
+        this.perimeter = getPerimeter();
         this.color = c;
     }
 
-    public Line(GeometricalForm f1, GeometricalForm f2, Color c) {
-        this.x1 = f1.getX();
-        this.y1 = f1.getY();
-        this.x2 = f2.getX();
-        this.y2 = f2.getY();
-        this.color = c;
+    public Line(GeometricalForm f1, GeometricalForm f2, Color c) throws IllegalPositionException {
+        this(f1.getX(), f1.getY(), f2.getX(), f2.getY(), c);
     }
 
     @Override
@@ -82,4 +82,13 @@ public class Line implements GeometricalForm {
     public void place(int x, int y) throws IllegalPositionException {
 
     }
+    @Override
+    public boolean equals(Object o){
+        return false;
+    }
+    @Override
+    public int hashCode(){
+        return 0;
+    }
+
 }

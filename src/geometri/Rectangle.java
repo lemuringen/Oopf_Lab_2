@@ -10,6 +10,9 @@ public class Rectangle implements GeometricalForm {
     private int y;
     private int width;
     private int height;
+    private int area;
+    private int perimeter;
+
     private Color color;
 
     public Rectangle(int x, int y, int width, int height, Color c) throws IllegalPositionException {
@@ -17,15 +20,13 @@ public class Rectangle implements GeometricalForm {
         this.y = y;
         this.width = width;
         this.height = height;
+        this.area = getArea();
+        this.perimeter = getPerimeter();
         this.color = c;
     }
 
-    public Rectangle(GeometricalForm f, int width, int height, Color c) {
-        this.x = f.getX();
-        this.y = f.getY();
-        this.width = width;
-        this.height = height;
-        this.color = c;
+    public Rectangle(GeometricalForm f, int width, int height, Color c) throws IllegalPositionException {
+        this(f.getX(), f.getY(), width, height, c);
 
 
     }
@@ -84,4 +85,13 @@ public class Rectangle implements GeometricalForm {
     public void place(int x, int y) throws IllegalPositionException {
 
     }
+    @Override
+    public boolean equals(Object o){
+        return false;
+    }
+    @Override
+    public int hashCode(){
+        return 0;
+    }
+
 }

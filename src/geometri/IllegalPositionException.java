@@ -3,6 +3,7 @@ package geometri;
 /**
  * Created by JesperU on 2016-11-16.
  */
+
 /**
  * An <tt>Exception</tt> which is thrown when trying to
  * set an illegal position.
@@ -22,6 +23,7 @@ public class IllegalPositionException
     /**
      * Construct a new<TT>Exception</TT> <i>with</i>
      * a detail message.
+     *
      * @param message The detail message .
      */
     public IllegalPositionException(String message) {

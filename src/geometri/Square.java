@@ -5,24 +5,25 @@ import java.awt.*;
 /**
  * Created by JesperU on 2016-11-16.
  */
-public class Square implements GeometricalForm{
+public class Square implements GeometricalForm {
     private int x;
     private int y;
     private int side;
+    private int area;
+    private int perimeter;
     private Color color;
 
     public Square(int x, int y, int side, Color c) throws IllegalPositionException {
         this.x = x;
         this.y = y;
         this.side = side;
+        this.area = getArea();
+        this.perimeter = getPerimeter();
         this.color = c;
     }
 
-    public Square(GeometricalForm f, int side, Color c) {
-        this.x = f.getX();
-        this.y = f.getY();
-        this.side = side;
-        this.color = c;
+    public Square(GeometricalForm f, int side, Color c) throws IllegalPositionException {
+        this(f.getX(), f.getY(), side, c);
     }
 
     @Override
@@ -79,4 +80,13 @@ public class Square implements GeometricalForm{
     public void place(int x, int y) throws IllegalPositionException {
 
     }
+    @Override
+    public boolean equals(Object o){
+        return false;
+    }
+    @Override
+    public int hashCode(){
+        return 0;
+    }
+
 }

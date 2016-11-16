@@ -8,18 +8,20 @@ import java.awt.*;
 public class Point implements GeometricalForm {
     private int x;
     private int y;
+    private int area;
+    private int perimeter;
     private Color color;
 
     public Point(int x, int y, Color c) throws IllegalPositionException {
         this.x = x;
         this.y = y;
+        this.area = getArea();
+        this.perimeter = getPerimeter();
         this.color = c;
     }
 
-    public Point(GeometricalForm f, Color c) {
-        this.x = f.getX();
-        this.y = f.getY();
-        this.color = c;
+    public Point(GeometricalForm f, Color c) throws IllegalPositionException {
+        this(f.getX(), f.getY(), c);
     }
 
     @Override
@@ -75,5 +77,14 @@ public class Point implements GeometricalForm {
     @Override
     public void place(int x, int y) throws IllegalPositionException {
 
+    }
+
+    @Override
+    public boolean equals(Object o){
+        return false;
+    }
+    @Override
+    public int hashCode(){
+        return 0;
     }
 }

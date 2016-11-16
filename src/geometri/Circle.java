@@ -9,20 +9,23 @@ public class Circle implements GeometricalForm {
     private int x;
     private int y;
     private int diameter;
+    private int area;
+    private int perimeter;
     private Color color;
+
 
     public Circle(int x, int y, int diameter, Color c) throws IllegalPositionException {
         this.x = x;
         this.y = y;
         this.diameter = diameter;
+        this.area = getArea();
+        this.perimeter = getPerimeter();
         this.color = c;
+
     }
 
-    public Circle(GeometricalForm f, int diameter, Color c) {
-        this.x = f.getX();
-        this.y = f.getY();
-        this.diameter = diameter;
-        this.color = c;
+    public Circle(GeometricalForm f, int diameter, Color c) throws IllegalPositionException {
+        this(f.getX(), f.getY(), diameter, c);
     }
 
     @Override
@@ -78,5 +81,13 @@ public class Circle implements GeometricalForm {
     @Override
     public void place(int x, int y) throws IllegalPositionException {
 
+    }
+    @Override
+    public boolean equals(Object o){
+        return false;
+    }
+    @Override
+    public int hashCode(){
+        return 0;
     }
 }
