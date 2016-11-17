@@ -29,6 +29,8 @@ public class Circle implements GeometricalForm {
     }
 
     @Override
+    //https://www.jetbrains.com/help/idea/2016.2/overriding-methods-of-a-superclass.html
+    //Override i IntelliJ
     public int getArea() {
         return 0;
     }
