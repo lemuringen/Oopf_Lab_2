@@ -1,47 +1,16 @@
-/**
- * Created by JesperU on 2016-11-16.
- */
 package geometri;
+
 import java.awt.*;
 
 /**
- * This interface describes drawable geometrical forms.
- * Each form contains of: A rectangle surrounding the form as narrow as
- * possible defined by its width and height, the position of
- * the upper left corner of the surrounding rectangle,
- * and a colour given as an object of <tt>java.awt.Color</tt>.
- * <p>
- * Furthermore the forms may be compared. First the areas of the
- * forms are compared and if the areas are equal then the
- * the perimeters are compared.
- * The area and the perimeter of a <tt>Point</tt> are 0.
- * The area of a
- * <tt>Line</tt> is 0 and its perimeter is the length of
- * the line.
- * <p>
- * The forms may be moved, but may not be modyfied in any other way.
- * Only positive x och y coordinates are allowed for the position.
- * Negative values for the coordinates gives an
- * <tt>IllegalPositionException</tt>, which is declared
- * in this package.
- * <p>
- * Finally, the forms may be compared for equality,
- * where all components except the positions of the forms
- * are compared.
- *
- * @author (Bror Bjerner/Christer Carlsson)
- * @version (nov 2014)
+ * Created by JesperU on 2016-11-22.
  */
-public interface GeometricalForm
-        extends   Comparable<GeometricalForm> {
-
-    /**
-     * Get the area of this form rounded
-     * to closest integer.
-     *
-     * @return the computed area.
-     */
-    public int getArea();
+public abstract class GeometricalShape implements GeometricalForm {
+    protected int x;
+    protected int y;
+    public int getArea(){
+        return 0;
+    };
 
     /**
      * The method <tt>compareTo</tt> compares the area and perimeter of the forms
@@ -55,15 +24,16 @@ public interface GeometricalForm
      *         0 if the sizes are equal, and a positive integer
     otherwise.
      */
-    public int compareTo( GeometricalForm f );
-
+    public int compareTo( GeometricalForm f ){
+        return 0;
+    }
     /**
      * Fill the area of the form at the position of the form
      * with the color of the form.
      *
      * @param g A graphic pen to draw with.
      */
-    public void fill( Graphics g );
+    public abstract void fill( Graphics g );
 
     /**
      * Get the colour of this form.
@@ -71,35 +41,41 @@ public interface GeometricalForm
      * @return the colour of this form.
      */
 
-    public Color getColor();
+    public Color getColor(){
+        return null;
+    }
 
     /**
      * Get the width of the surrounding rectangle of this form.
      *
      * @return the width.
      */
-    public int getWidth();
+    public abstract  int getWidth();
 
     /**
      * Get the height of the surrounding rectangle of this form.
      *
      * @return the x coordinate.
      */
-    public int getHeight();
+    public abstract int getHeight();
 
     /**
      * Get the x coordinate of the position of this form.
      *
      * @return the x coordinate.
      */
-    public int getX();
+    public int getX(){
+        return x;
+    }
 
     /**
      * Get the y coordinate of the position of this form.
      *
      * @return the y coordinate.
      */
-    public int getY();
+    public int getY(){
+        return y;
+    }
 
     /**
      * Move the form the given distances.
@@ -113,14 +89,17 @@ public interface GeometricalForm
      * @throws IllegalPositionException if any coordinate becomes negative.
      */
     public void move( int dx, int dy )
-            throws IllegalPositionException;
+            throws IllegalPositionException{
+
+    }
 
     /**
      * Get the perimeter of this form rounded
      * to closest integer.
+     *
      * @return the computed perimeter.
      */
-    public int getPerimeter();
+    public abstract int getPerimeter();
 
     /**
      * Place the form on given coordinates.
@@ -135,7 +114,14 @@ public interface GeometricalForm
      * @throws <tt>IllegalPositionException</tt> if any coordinate is negative.
      */
     public void place( int x, int y )
-            throws IllegalPositionException;
+            throws IllegalPositionException{
+    }
+    public boolean equals(Object o){
+        return false;
+    }
+
 
 
 } // interface GeometricalForm
+
+

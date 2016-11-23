@@ -5,7 +5,7 @@ import java.awt.*;
 /**
  * Created by JesperU on 2016-11-16.
  */
-public class Circle implements GeometricalForm {
+public class Circle extends GeometricalShape {
     private int x;
     private int y;
     private int diameter;
@@ -29,14 +29,7 @@ public class Circle implements GeometricalForm {
     }
 
     @Override
-    //https://www.jetbrains.com/help/idea/2016.2/overriding-methods-of-a-superclass.html
-    //Override i IntelliJ
     public int getArea() {
-        return 0;
-    }
-
-    @Override
-    public int compareTo(GeometricalForm f) {
         return 0;
     }
 
@@ -44,12 +37,6 @@ public class Circle implements GeometricalForm {
     public void fill(Graphics g) {
 
     }
-
-    @Override
-    public Color getColor() {
-        return null;
-    }
-
     @Override
     public int getWidth() {
         return 0;
@@ -60,34 +47,12 @@ public class Circle implements GeometricalForm {
         return 0;
     }
 
-    @Override
-    public int getX() {
-        return 0;
-    }
-
-    @Override
-    public int getY() {
-        return 0;
-    }
-
-    @Override
-    public void move(int dx, int dy) throws IllegalPositionException {
-
-    }
 
     @Override
     public int getPerimeter() {
         return 0;
     }
 
-    @Override
-    public void place(int x, int y) throws IllegalPositionException {
-
-    }
-    @Override
-    public boolean equals(Object o){
-        return false;
-    }
     @Override
     public int hashCode(){
         return 0;
