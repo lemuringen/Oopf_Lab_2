@@ -85,6 +85,6 @@ public class Point implements GeometricalForm {
     }
     @Override
     public int hashCode(){
-        return 0;
+        return 1;
     }
 }
