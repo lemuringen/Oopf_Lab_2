@@ -8,15 +8,30 @@ import java.awt.*;
 public class Square extends GeometricalShape {
     final private int side;
 
+    /**
+     * Constructor for Square
+     * @param x Placement of the Square on the X-axis.
+     * @param y Placement of the Square on the Y-axis.
+     * @param side Side of the Square.
+     * @param color Color of the Square.
+     */
+
     public Square(int x, int y, int side, Color color) throws IllegalPositionException {
         super(x, y, color);
         this.side = side;
     }
 
+    /**
+     * Constructor for the Square
+     * @param f GeometricalForm used for x and y coordinates.
+     * @param side Side of the Square.
+     * @param color Color of the Square.
+     */
     public Square(GeometricalForm f, int side, Color color) {
         super(f.getX(), f.getY(), color);
         this.side = side;
     }
+
     @Override
     public int getArea() {
         return 0;
@@ -40,7 +55,11 @@ public class Square extends GeometricalShape {
     public int getPerimeter() {
         return 0;
     }
-
+    /**
+     *
+     * @param o Object for comparison, objects compared by area first and perimeter second.
+     * @return True if all attributes and type is the same, regardless of position.
+     */
     @Override
     public boolean equals(Object o) {
         return false;
