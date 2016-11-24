@@ -6,22 +6,14 @@ import java.awt.*;
  * Created by JesperU on 2016-11-16.
  */
 public class Point extends GeometricalShape {
-    private int x;
-    private int y;
-    private int area;
-    private int perimeter;
-    private Color color;
 
-    public Point(int x, int y, Color c) throws IllegalPositionException {
-        this.x = x;
-        this.y = y;
-        this.area = getArea();
-        this.perimeter = getPerimeter();
-        this.color = c;
+
+    public Point(int x, int y, Color color) throws IllegalPositionException {
+        super(x, y, color);
     }
 
-    public Point(GeometricalForm f, Color c) throws IllegalPositionException {
-        this(f.getX(), f.getY(), c);
+    public Point(GeometricalForm f, Color color)  {
+        super(f.getX(), f.getY(), color);
     }
 
     @Override

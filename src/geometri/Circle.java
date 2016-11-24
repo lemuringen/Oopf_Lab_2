@@ -6,26 +6,17 @@ import java.awt.*;
  * Created by JesperU on 2016-11-16.
  */
 public class Circle extends GeometricalShape {
-    private int x;
-    private int y;
     private int diameter;
-    private int area;
-    private int perimeter;
-    private Color color;
 
 
-    public Circle(int x, int y, int diameter, Color c) throws IllegalPositionException {
-        this.x = x;
-        this.y = y;
+    public Circle(int x, int y, int diameter, Color color) throws IllegalPositionException {
+        super(x, y, color);
         this.diameter = diameter;
-        this.area = getArea();
-        this.perimeter = getPerimeter();
-        this.color = c;
-
     }
 
-    public Circle(GeometricalForm f, int diameter, Color c) throws IllegalPositionException {
-        this(f.getX(), f.getY(), diameter, c);
+    public Circle(GeometricalForm f, int diameter, Color color) {
+        super(f.getX(), f.getY(), color);
+        this.diameter = diameter;
     }
 
     @Override

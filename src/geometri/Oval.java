@@ -6,27 +6,20 @@ import java.awt.*;
  * Created by JesperU on 2016-11-16.
  */
 public class Oval extends GeometricalShape{
-    private int x;
-    private int y;
     private int width;
     private int height;
-    private int area;
-    private int perimeter;
-    private Color color;
 
-    public Oval(int x, int y, int width, int height, Color c) throws IllegalPositionException {
-        this.x = x;
-        this.y = y;
+    public Oval(int x, int y, int width, int height, Color color) throws IllegalPositionException {
+        super(x, y, color);
         this.width = width;
         this.height = height;
-        this.area = getArea();
-        this.perimeter = getPerimeter();
-        this.color = c;
     }
 
-    public Oval(GeometricalForm f, int width, int height, Color c) throws IllegalPositionException {
-        this(f.getX(), f.getY(), width, height, c);
-    }
+    public Oval(GeometricalForm f, int width, int height, Color color) {
+        super(f.getX(), f.getY(), color);
+        this.width = width;
+        this.height = height;
+        }
 
     @Override
     public int getArea() {

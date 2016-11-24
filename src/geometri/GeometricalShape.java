@@ -6,11 +6,27 @@ import java.awt.*;
  * Created by JesperU on 2016-11-22.
  */
 public abstract class GeometricalShape implements GeometricalForm {
-    protected int x;
-    protected int y;
-    public int getArea(){
-        return 0;
-    };
+    protected final int x;
+    protected final int y;
+    protected final int area;
+    protected final int perimeter;
+    protected final Color color;
+
+    GeometricalShape(int x, int y, Color color){
+        this.x = x;
+        this.y = y;
+        this.area = getArea();
+        this.perimeter = getPerimeter();
+        this.color = color;
+
+    }
+    /**
+     * Get the area of this form rounded
+     * to closest integer.
+     *
+     * @return the computed area.
+     */
+    public abstract int getArea();
 
     /**
      * The method <tt>compareTo</tt> compares the area and perimeter of the forms

@@ -6,28 +6,19 @@ import java.awt.*;
  * Created by JesperU on 2016-11-16.
  */
 public class Rectangle extends GeometricalShape {
-    private int x;
-    private int y;
     private int width;
     private int height;
-    private int area;
-    private int perimeter;
 
-    private Color color;
-
-    public Rectangle(int x, int y, int width, int height, Color c) throws IllegalPositionException {
-        this.x = x;
-        this.y = y;
+    public Rectangle(int x, int y, int width, int height, Color color) throws IllegalPositionException {
+        super(x, y, color);
         this.width = width;
         this.height = height;
-        this.area = getArea();
-        this.perimeter = getPerimeter();
-        this.color = c;
     }
 
-    public Rectangle(GeometricalForm f, int width, int height, Color c) throws IllegalPositionException {
-        this(f.getX(), f.getY(), width, height, c);
-
+    public Rectangle(GeometricalForm f, int width, int height, Color color) {
+        super(f.getX(), f.getY(), color);
+        this.width = width;
+        this.height = height;
 
     }
 
