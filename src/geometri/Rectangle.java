@@ -6,10 +6,12 @@ import java.awt.*;
  * Created by JesperU on 2016-11-16.
  */
 public class Rectangle extends GeometricalShape {
+    
     private int width;
     private int height;
+    
     /**
-     * Constructor for Rectangle
+     * Constructor for the Rectangle.
      * @param x Placement of the Rectangle on the X-axis.
      * @param y Placement of the Rectangle on the Y-axis.
      * @param width Width of the Rectangle.
@@ -21,8 +23,9 @@ public class Rectangle extends GeometricalShape {
         this.width = width;
         this.height = height;
     }
+    
     /**
-     * Constructor for the Rectangle
+     * Constructor for the Rectangle.
      * @param f GeometricalForm used for x and y coordinates.
      * @param width Width of the Rectangle.
      * @param height Height of the Rectangle.
@@ -53,6 +56,7 @@ public class Rectangle extends GeometricalShape {
     public int getHeight() {
         return height;
     }
+    
     @Override
     public int getPerimeter() {
         return ((2 * width) + (2 * height));
@@ -62,5 +66,4 @@ public class Rectangle extends GeometricalShape {
     public int hashCode(){
         return 0;
     }
-
 }
