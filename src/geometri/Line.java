@@ -8,6 +8,7 @@ import java.awt.*;
 public class Line extends GeometricalShape {
     private int height;
     private int width;
+    private boolean gradient; 
 
     /**
      * Constructor for Line.
@@ -22,6 +23,11 @@ public class Line extends GeometricalShape {
         super((x1 < x2 ? x1 : x2), (y1 < y2 ? y1 : y2), color);
         this.height = Math.abs(y2-y1);
         this.width = Math.abs(x2-x1);
+        if (y1 <= y2) {
+            this.gradient = true;
+        } else {
+            this.gradient = false;
+        }
     }
 
     /**
@@ -35,7 +41,13 @@ public class Line extends GeometricalShape {
         super((f1.getX() > f2.getX() ? f1.getX() : f2.getX()), (f1.getY() > f2.getY() ? f1.getY() : f2.getY()), color);
         this.height = Math.abs(f2.getY()-f1.getY());
         this.width = Math.abs(f2.getX()-f2.getX());
+        if (y1 <= y2) {
+            this.gradient = true;
+        } else {
+            this.gradient = false;
+        }
     }
+    
     /** Get the area of the Line.
      * @return Returns 0 as line area.
      */
@@ -43,39 +55,55 @@ public class Line extends GeometricalShape {
     public int getArea() {
         return 0;
     }
-
+    
+    /** Draw the Line.
+     */
     @Override
     public void fill(Graphics g) {
-
+        g.setColor(color);
+        int x1 = this.x;
+        int x2 = this.x + width;
+        int y1;
+        int y2;
+        if (gradient = true) {
+            y1 = this.y + height;
+            y2 = this.y;
+        } else {
+            y1 = this.y;
+            y2 = this.y + height;
+        }
+        drawLine(x1, y1, x2, y2)
     }
-
+    
+    /** Get the width of the Rectangle containing the Line.
+     * @return Returns width of the Rectangle containing the Line.
+     */
     @Override
     public int getWidth() {
-        return 0;
+        return width;
     }
-
+    
+    /** Get the height of the Rectangle containing the Line.
+     * @return Returns height of the Rectangle containing the Line.
+     */
     @Override
     public int getHeight() {
-        return 0;
+        return height;
     }
-
+    
+    /** Get the perimeter (length) of the Line.
+     * @return Returns the perimeter (length) of the Line.
+     */
     @Override
     public int getPerimeter() {
-        return 0;
+        return Math.sqrt((Math.pow(width, 2)) + (Math.pow(height, 2)));
     }
-
+    
+    /** Get the width of the Rectangle containing the Line.
+     * @return Returns the hash code of the Line.
+     */
     @Override
     public int hashCode() {
         return 0;
     }
-
-    /**
-     * @param o Object for comparison, objects compared by area first and perimeter second.
-     * @return True if all attributes and type is the same, regardless of position.
-     */
-    @Override
-    public boolean equals(Object o) {
-        return false;
-    }
-
 }
