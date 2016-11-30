@@ -8,7 +8,7 @@ import java.awt.*;
 public class Point extends GeometricalShape {
 
     /**
-     * Constructor for Point
+     * Constructor for the Point.
      * @param x Placement of the Point on the X-axis.
      * @param y Placement of the Point on the Y-axis.
      * @param color Color of the Point.
@@ -16,8 +16,9 @@ public class Point extends GeometricalShape {
     public Point(int x, int y, Color color) throws IllegalPositionException {
         super(x, y, color);
     }
+    
     /**
-     * Constructor for the Point
+     * Constructor for the Point.
      * @param f GeometricalForm used for x and y coordinates.
      * @param color Color of the Point.
      */
@@ -25,9 +26,6 @@ public class Point extends GeometricalShape {
         super(f.getX(), f.getY(), color);
     }
 
-    /** Get the area of the Point.
-     * @return Returns 0 as line point.
-     */
     @Override
     public int getArea() {
         return 0;
@@ -37,6 +35,7 @@ public class Point extends GeometricalShape {
     public void fill(Graphics g) {
         g.drawOval(this.x, this.y, 1, 1)
     }
+    
     @Override
     public int getWidth() {
         return 0;
