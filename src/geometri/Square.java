@@ -7,7 +7,8 @@ import java.awt.*;
  */
 public class Square extends GeometricalShape {
     
-    final private int side;
+    /** Side of the Square.*/
+    private int side;
 
     /**
      * Constructor for the Square.
