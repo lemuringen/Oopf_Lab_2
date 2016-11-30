@@ -12,11 +12,10 @@ public class Line extends GeometricalShape {
 
     /**
      * Constructor for Line.
-     *
-     * @param x1    Placement of the start of the Line on the X-axis.
-     * @param y1    Placement of the start of the Line on the Y-axis.
-     * @param x2    Placement of the end of the Line on the Y-axis.
-     * @param y2    Placement of the end of the Line on the Y-axis.
+     * @param x1 Placement of the start of the Line on the X-axis.
+     * @param y1 Placement of the start of the Line on the Y-axis.
+     * @param x2 Placement of the end of the Line on the Y-axis.
+     * @param y2 Placement of the end of the Line on the Y-axis.
      * @param color Color of the Point.
      */
     public Line(int x1, int y1, int x2, int y2, Color color) throws IllegalPositionException {
@@ -32,9 +31,8 @@ public class Line extends GeometricalShape {
 
     /**
      * Constructor for the Line.
-     *
-     * @param f1    GeometricalForm used for the x and y start coordinates.
-     * @param f2    GeometricalForm used for the x and y end coordinates.
+     * @param f1 GeometricalForm used for the x and y start coordinates.
+     * @param f2 GeometricalForm used for the x and y end coordinates.
      * @param color Color of the Point.
      */
     public Line(GeometricalForm f1, GeometricalForm f2, Color color) {
@@ -48,15 +46,17 @@ public class Line extends GeometricalShape {
         }
     }
     
-    /** Get the area of the Line.
-     * @return Returns 0 as line area.
+    /** 
+     * Calculates the area of the Line.
+     * @return Returns the Line's area as 0.
      */
     @Override
     public int getArea() {
         return 0;
     }
     
-    /** Draw the Line.
+    /** 
+     * Draws the Line.
      */
     @Override
     public void fill(Graphics g) {
@@ -75,23 +75,26 @@ public class Line extends GeometricalShape {
         drawLine(x1, y1, x2, y2)
     }
     
-    /** Get the width of the Rectangle containing the Line.
-     * @return Returns width of the Rectangle containing the Line.
+    /** 
+     * Getter for the width of the Rectangle containing the Line.
+     * @return Returns the width of the Rectangle containing the Line.
      */
     @Override
     public int getWidth() {
         return width;
     }
     
-    /** Get the height of the Rectangle containing the Line.
-     * @return Returns height of the Rectangle containing the Line.
+    /** 
+     * Getter for the height of the Rectangle containing the Line.
+     * @return Returns the height of the Rectangle containing the Line.
      */
     @Override
     public int getHeight() {
         return height;
     }
     
-    /** Get the perimeter (length) of the Line.
+    /**
+     * Calculates the perimeter (length) of the Line.
      * @return Returns the perimeter (length) of the Line.
      */
     @Override
@@ -99,8 +102,9 @@ public class Line extends GeometricalShape {
         return Math.sqrt((Math.pow(width, 2)) + (Math.pow(height, 2)));
     }
     
-    /** Get the width of the Rectangle containing the Line.
-     * @return Returns the hash code of the Line.
+    /**
+     * Calculates the hash code for the Object
+     * @return Returns the hash code for the Object.
      */
     @Override
     public int hashCode() {
