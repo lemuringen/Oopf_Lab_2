@@ -32,40 +32,32 @@ public class Rectangle extends GeometricalShape {
         super(f.getX(), f.getY(), color);
         this.width = width;
         this.height = height;
-
     }
 
     @Override
     public int getArea() {
-        return 0;
+        return (width * height);
     }
 
     @Override
     public void fill(Graphics g) {
+        g.fillRect(x, y, width, height);
     }
 
     @Override
     public int getWidth() {
-        return 0;
+        return width;
     }
 
     @Override
     public int getHeight() {
-        return 0;
+        return height;
     }
     @Override
     public int getPerimeter() {
-        return 0;
+        return ((2 * width) + (2 * height));
     }
-
-    /**
-     * @param o Object for comparison, objects compared by area first and perimeter second.
-     * @return True if all attributes and type is the same, regardless of position.
-     */
-    @Override
-    public boolean equals(Object o){
-        return false;
-    }
+    
     @Override
     public int hashCode(){
         return 0;
