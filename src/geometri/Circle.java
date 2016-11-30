@@ -7,6 +7,7 @@ import java.awt.*;
  */
 public class Circle extends GeometricalShape {
     
+    /** Diameter of the circle */
     final private int diameter;
 
     /**
@@ -58,16 +59,18 @@ public class Circle extends GeometricalShape {
     }
     
     /**
-     * Calculates the radius of the Circle
-     * @return Returns the radius of the Circle.
+     * Calculates the radius of the Circle.
+     * 
+     * @return the radius of the Circle.
      */
     public double getRadius() {
         return this.diameter / 2;
     }
     
     /**
-     * Getter for the diameter of the Circle
-     * @return Returns the diameter of the Circle.
+     * Getter for the diameter of the Circle.
+     *
+     * @return the diameter of the Circle.
      */
     public int getDiameter() {
         return diameter;
