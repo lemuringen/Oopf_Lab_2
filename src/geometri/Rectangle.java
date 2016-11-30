@@ -6,8 +6,9 @@ import java.awt.*;
  * Created by JesperU on 2016-11-16.
  */
 public class Rectangle extends GeometricalShape {
-    
+    /** Width of the Rectangle.*/
     private int width;
+    /** Height of the Rectangle.*/
     private int height;
     
     /**
