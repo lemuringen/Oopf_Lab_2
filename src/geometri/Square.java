@@ -6,6 +6,7 @@ import java.awt.*;
  * Created by JesperU on 2016-11-16.
  */
 public class Square extends GeometricalShape {
+    
     final private int side;
 
     /**
@@ -15,7 +16,6 @@ public class Square extends GeometricalShape {
      * @param side Side of the Square.
      * @param color Color of the Square.
      */
-
     public Square(int x, int y, int side, Color color) throws IllegalPositionException {
         super(x, y, color);
         this.side = side;
@@ -31,40 +31,40 @@ public class Square extends GeometricalShape {
         super(f.getX(), f.getY(), color);
         this.side = side;
     }
-
+    
+    /**
+     * Calculates the area of the Square
+     * @return area of the Square.
+     */
     @Override
     public int getArea() {
-        return 0;
+        return (side * side);
     }
 
     @Override
     public void fill(Graphics g) {
+        g.fillOval(x, y, side, side);
     }
-
+    
     @Override
     public int getWidth() {
-        return 0;
+        return side;
     }
 
     @Override
     public int getHeight() {
-        return 0;
+        return side;
     }
-
-    @Override
-    public int getPerimeter() {
-        return 0;
-    }
+    
     /**
-     *
-     * @param o Object for comparison, objects compared by area first and perimeter second.
-     * @return True if all attributes and type is the same, regardless of position.
+     * Calculates the perimeter of the Square
+     * @return perimeter of the Square.
      */
     @Override
-    public boolean equals(Object o) {
-        return false;
+    public int getPerimeter() {
+        return (4 * side);
     }
-
+    
     @Override
     public int hashCode() {
         return 0;
