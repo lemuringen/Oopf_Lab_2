@@ -36,25 +36,26 @@ public class Oval extends GeometricalShape{
 
     @Override
     public int getArea() {
-        return 0;
+        return (int)(width * height * Math.PI);
     }
 
     @Override
     public void fill(Graphics g) {
-
+        g.drawOval(this.x, this.y, this.width, this.height);
     }
+    
     @Override
     public int getWidth() {
-        return 0;
+        return width;
     }
 
     @Override
     public int getHeight() {
-        return 0;
+        return height;
     }
     @Override
     public int getPerimeter() {
-        return 0;
+        return (int)(2 * Math.PI * Math.sqrt((Math.pow(width, 2) + Math.pow(height, 2)) / 2));
     }
     @Override
     public int hashCode(){
