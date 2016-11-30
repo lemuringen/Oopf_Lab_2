@@ -6,8 +6,9 @@ import java.awt.*;
  * Created by JesperU on 2016-11-16.
  */
 public class Oval extends GeometricalShape{
-    
+    /** Width of the Oval.*/
     private int width;
+    /** Height of the Oval.*/
     private int height;
    
     /**
