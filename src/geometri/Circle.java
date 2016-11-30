@@ -10,7 +10,7 @@ public class Circle extends GeometricalShape {
     final private int diameter;
 
     /**
-     * Constructor for Circle.
+     * Constructor for the Circle.
      * @param x X-cordinate for the left uppermost corner of the narrowest possible Rectangle surrounding the Circle.
      * @param y Y-cordinate for the left uppermost corner of the narrowest possible Rectangle surrounding the Circle.
      * @param diameter Diameter of the Circle.
@@ -22,7 +22,7 @@ public class Circle extends GeometricalShape {
     }
     
     /**
-     * Constructor for the Circle
+     * Constructor for the Circle.
      * @param f Geometrical form used for x and y coordinates of the left uppermost corner of the narrowest possible Rectangle surrounding the Circle
      * @param diameter Diameter of the Circle.
      * @param color Color of the Circle.
@@ -32,45 +32,26 @@ public class Circle extends GeometricalShape {
         this.diameter = diameter;
     }
     
-    /**
-     * Calculates the area of the Circle
-     * @return Returns the area of the Circle.
-     */
     @Override
     public int getArea() {
         return (int)(Math.pow(getRadius(), 2) * Math.PI);
     }
     
-    /**
-     * Draws the Circle
-     */
     @Override
     public void fill(Graphics g) {
         g.fillOval(this.x, this.y, this.diameter, this.diameter)
     }
     
-    /**
-     * Getter for the width of the Circle
-     * @return Returns the diameter of the Circle.
-     */
     @Override
     public int getWidth() {
         return diameter;
     }
     
-    /**
-     * Getter for the height of the Circle
-     * @return Returns the diameter of the Circle.
-     */
     @Override
     public int getHeight() {
         return diameter;
     }
     
-    /**
-     * Calculates the perimeter of the Circle
-     * @return Returns the perimeter of the Circle.
-     */
     @Override
     public int getPerimeter() {
         return (int)(2 * Math.PI * getRadius());
@@ -92,10 +73,6 @@ public class Circle extends GeometricalShape {
         return diameter;
     }
     
-    /**
-     * Calculates the hash code for the Object
-     * @return Returns the hash code for the Object.
-     */
     @Override
     public int hashCode() {
         return 0;
