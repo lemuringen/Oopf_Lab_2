@@ -34,7 +34,7 @@ public class Circle extends GeometricalShape {
     
     /**
      * Calculates the area of the Circle
-     * @return the area of the Circle.
+     * @return Returns the area of the Circle.
      */
     @Override
     public int getArea() {
@@ -51,7 +51,7 @@ public class Circle extends GeometricalShape {
     
     /**
      * Getter for the width of the Circle
-     * @return the diameter of the Circle.
+     * @return Returns the diameter of the Circle.
      */
     @Override
     public int getWidth() {
@@ -60,7 +60,7 @@ public class Circle extends GeometricalShape {
     
     /**
      * Getter for the height of the Circle
-     * @return the diameter of the Circle.
+     * @return Returns the diameter of the Circle.
      */
     @Override
     public int getHeight() {
@@ -69,7 +69,7 @@ public class Circle extends GeometricalShape {
     
     /**
      * Calculates the perimeter of the Circle
-     * @return the perimeter of the Circle.
+     * @return Returns the perimeter of the Circle.
      */
     @Override
     public int getPerimeter() {
@@ -78,7 +78,7 @@ public class Circle extends GeometricalShape {
     
     /**
      * Calculates the radius of the Circle
-     * @return the radius of the Circle.
+     * @return Returns the radius of the Circle.
      */
     public double getRadius() {
         return this.diameter / 2;
@@ -86,7 +86,7 @@ public class Circle extends GeometricalShape {
     
     /**
      * Getter for the diameter of the Circle
-     * @return the diameter of the Circle.
+     * @return Returns the diameter of the Circle.
      */
     public int getDiameter() {
         return diameter;
@@ -94,7 +94,7 @@ public class Circle extends GeometricalShape {
     
     /**
      * Calculates the hash code for the Object
-     * @return the hash code for the Object.
+     * @return Returns the hash code for the Object.
      */
     @Override
     public int hashCode() {
