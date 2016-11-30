@@ -6,8 +6,12 @@ import java.awt.*;
  * Created by JesperU on 2016-11-16.
  */
 public class Line extends GeometricalShape {
+    
+    /** Height of the surrounding Rectangle.*/
     private int height;
+    /** Width of the surrounding Rectangle.*/
     private int width;
+    /** Positive or negative gradient of the line.*/
     private boolean gradient; 
 
     /**
