@@ -8,7 +8,7 @@ import java.awt.*;
 public class Circle extends GeometricalShape {
     
     /** Diameter of the circle */
-    final private int diameter;
+    private int diameter;
 
     /**
      * Constructor for the Circle.
