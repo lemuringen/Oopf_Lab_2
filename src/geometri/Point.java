@@ -35,7 +35,7 @@ public class Point extends GeometricalShape {
 
     @Override
     public void fill(Graphics g) {
-
+        g.drawOval(this.x, this.y, 1, 1)
     }
     @Override
     public int getWidth() {
@@ -53,21 +53,7 @@ public class Point extends GeometricalShape {
     }
 
     @Override
-    public void place(int x, int y) throws IllegalPositionException {
-
-    }
-
-    @Override
     public int hashCode(){
         return 0;
-    }
-
-    /**
-     * @param o Object for comparison, objects compared by area first and perimeter second.
-     * @return True if all attributes and type is the same, regardless of position.
-     */
-    @Override
-    public boolean equals(Object o){
-        return false;
     }
 }
