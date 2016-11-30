@@ -11,7 +11,7 @@ public class Line extends GeometricalShape {
     private boolean gradient; 
 
     /**
-     * Constructor for Line.
+     * Constructor for the Line.
      * @param x1 Placement of the start of the Line on the X-axis.
      * @param y1 Placement of the start of the Line on the Y-axis.
      * @param x2 Placement of the end of the Line on the Y-axis.
@@ -46,18 +46,11 @@ public class Line extends GeometricalShape {
         }
     }
     
-    /** 
-     * Calculates the area of the Line.
-     * @return Returns the Line's area as 0.
-     */
     @Override
     public int getArea() {
         return 0;
     }
     
-    /** 
-     * Draws the Line.
-     */
     @Override
     public void fill(Graphics g) {
         g.setColor(color);
@@ -75,37 +68,21 @@ public class Line extends GeometricalShape {
         drawLine(x1, y1, x2, y2)
     }
     
-    /** 
-     * Getter for the width of the Rectangle containing the Line.
-     * @return Returns the width of the Rectangle containing the Line.
-     */
     @Override
     public int getWidth() {
         return width;
     }
     
-    /** 
-     * Getter for the height of the Rectangle containing the Line.
-     * @return Returns the height of the Rectangle containing the Line.
-     */
     @Override
     public int getHeight() {
         return height;
     }
     
-    /**
-     * Calculates the perimeter (length) of the Line.
-     * @return Returns the perimeter (length) of the Line.
-     */
     @Override
     public int getPerimeter() {
         return Math.sqrt((Math.pow(width, 2)) + (Math.pow(height, 2)));
     }
     
-    /**
-     * Calculates the hash code for the Object
-     * @return Returns the hash code for the Object.
-     */
     @Override
     public int hashCode() {
         return 0;
