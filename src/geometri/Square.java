@@ -10,7 +10,7 @@ public class Square extends GeometricalShape {
     final private int side;
 
     /**
-     * Constructor for Square
+     * Constructor for the Square.
      * @param x Placement of the Square on the X-axis.
      * @param y Placement of the Square on the Y-axis.
      * @param side Side of the Square.
@@ -22,7 +22,7 @@ public class Square extends GeometricalShape {
     }
 
     /**
-     * Constructor for the Square
+     * Constructor for the Square.
      * @param f GeometricalForm used for x and y coordinates.
      * @param side Side of the Square.
      * @param color Color of the Square.
@@ -32,10 +32,6 @@ public class Square extends GeometricalShape {
         this.side = side;
     }
     
-    /**
-     * Calculates the area of the Square
-     * @return area of the Square.
-     */
     @Override
     public int getArea() {
         return (side * side);
@@ -56,10 +52,6 @@ public class Square extends GeometricalShape {
         return side;
     }
     
-    /**
-     * Calculates the perimeter of the Square
-     * @return perimeter of the Square.
-     */
     @Override
     public int getPerimeter() {
         return (4 * side);
@@ -69,5 +61,4 @@ public class Square extends GeometricalShape {
     public int hashCode() {
         return 0;
     }
-
 }
