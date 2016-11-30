@@ -2,9 +2,6 @@ package geometri;
 
 import java.awt.*;
 
-/**
- * Created by JesperU on 2016-11-16.
- */
 public class Circle extends GeometricalShape {
     
     /** Diameter of the circle */
@@ -20,6 +17,9 @@ public class Circle extends GeometricalShape {
     public Circle(int x, int y, int diameter, Color color) throws IllegalPositionException {
         super(x, y, color);
         this.diameter = diameter;
+        if (x < 0 || y < 0) {
+            throw new IllegalPositionException("Can't place on negative coordinate(s)");
+        }
     }
     
     /**
@@ -40,7 +40,8 @@ public class Circle extends GeometricalShape {
     
     @Override
     public void fill(Graphics g) {
-        g.fillOval(this.x, this.y, this.diameter, this.diameter)
+        g.setColor(this.color);
+        g.fillOval(this.x, this.y, this.diameter, this.diameter);
     }
     
     @Override
@@ -75,9 +76,22 @@ public class Circle extends GeometricalShape {
     public int getDiameter() {
         return diameter;
     }
-    
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Circle)) return false;
+        if (this == o) return true;
+
+        Circle other = (Circle) o;
+        if (this.diameter != other.getDiameter()) return false;
+        if (this.color.hashCode() != other.getColor().hashCode()) return false;
+        return true;
+    }
     @Override
     public int hashCode() {
-        return 0;
+        int prime = 13;
+        int result = 9;
+        result = prime * result + diameter;
+        result = prime * result +  color.hashCode();
+        return result;
     }
 }

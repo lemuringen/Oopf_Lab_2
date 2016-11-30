@@ -2,9 +2,6 @@ package geometri;
 
 import java.awt.*;
 
-/**
- * Created by JesperU on 2016-11-16.
- */
 public class Rectangle extends GeometricalShape {
     
     /** Width of the Rectangle.*/
@@ -22,6 +19,9 @@ public class Rectangle extends GeometricalShape {
      */
     public Rectangle(int x, int y, int width, int height, Color color) throws IllegalPositionException {
         super(x, y, color);
+        if (x < 0 || y < 0) {
+            throw new IllegalPositionException("Can't place on negative coordinate(s)");
+        }
         this.width = width;
         this.height = height;
     }
@@ -46,6 +46,7 @@ public class Rectangle extends GeometricalShape {
 
     @Override
     public void fill(Graphics g) {
+        g.setColor(this.color);
         g.fillRect(x, y, width, height);
     }
 
@@ -63,9 +64,27 @@ public class Rectangle extends GeometricalShape {
     public int getPerimeter() {
         return ((2 * width) + (2 * height));
     }
-    
+
     @Override
-    public int hashCode(){
-        return 0;
+    public int hashCode() {
+        int prime = 19;
+        int result = 3;
+        result = prime * result + width;
+        result = prime * result + height;
+        result = prime * result +  color.hashCode();
+        return result;
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Rectangle)) return false;
+        if (this == o) return true;
+
+        Rectangle other = (Rectangle) o;
+        if (this.width != other.getWidth()) return false;
+        if (this.height != other.getHeight()) return false;
+        if (this.area != other.getArea()) return false;
+        if (this.perimeter != other.getPerimeter()) return false;
+        if (this.color.hashCode() != other.getColor().hashCode()) return false;
+        return true;
     }
 }

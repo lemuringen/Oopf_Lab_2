@@ -1,10 +1,6 @@
 package geometri;
 
 /**
- * Created by JesperU on 2016-11-16.
- */
-
-/**
  * An <tt>Exception</tt> which is thrown when trying to
  * set an illegal position.
  * A position is illegal if any of its coordinates is negative.

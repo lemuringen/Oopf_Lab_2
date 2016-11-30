@@ -2,9 +2,7 @@ package geometri;
 
 import java.awt.*;
 
-/**
- * Created by JesperU on 2016-11-16.
- */
+
 public class Point extends GeometricalShape {
 
     /**
@@ -15,6 +13,9 @@ public class Point extends GeometricalShape {
      */
     public Point(int x, int y, Color color) throws IllegalPositionException {
         super(x, y, color);
+        if (x < 0 || y < 0) {
+            throw new IllegalPositionException("Can't place on negative coordinate(s)");
+        }
     }
     
     /**
@@ -33,7 +34,8 @@ public class Point extends GeometricalShape {
 
     @Override
     public void fill(Graphics g) {
-        g.drawOval(this.x, this.y, 1, 1)
+        g.setColor(color);
+        g.drawOval(this.x, this.y, 1, 1);
     }
     
     @Override
@@ -52,7 +54,18 @@ public class Point extends GeometricalShape {
     }
 
     @Override
-    public int hashCode(){
-        return 0;
+    public int hashCode() {
+        int prime = 1;
+        int result = 1;
+        result = prime * result +  color.hashCode();
+        return result;
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Point)) return false;
+        if (this == o) return true;
+        Point other = (Point) o;
+        if (this.color.hashCode() != other.getColor().hashCode()) return false;
+        return true;
     }
 }
