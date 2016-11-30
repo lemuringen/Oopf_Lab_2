@@ -6,7 +6,8 @@ import java.awt.*;
  * Created by JesperU on 2016-11-16.
  */
 public class Circle extends GeometricalShape {
-    private int diameter;
+    
+    final private int diameter;
 
     /**
      * Constructor for Circle.
@@ -32,52 +33,71 @@ public class Circle extends GeometricalShape {
     }
     
     /**
-     * 
+     * Calculates the area of the Circle
+     * @return the area of the Circle.
      */
     @Override
     public int getArea() {
         return (int)(Math.pow(getRadius(), 2) * Math.PI);
     }
-
+    
+    /**
+     * Draws the Circle
+     */
     @Override
     public void fill(Graphics g) {
-        g.drawOval(this.x, this.y, this.diameter, this.diameter)
+        g.fillOval(this.x, this.y, this.diameter, this.diameter)
     }
     
+    /**
+     * Getter for the width of the Circle
+     * @return the diameter of the Circle.
+     */
     @Override
     public int getWidth() {
         return diameter;
     }
-
+    
+    /**
+     * Getter for the height of the Circle
+     * @return the diameter of the Circle.
+     */
     @Override
     public int getHeight() {
         return diameter;
     }
-
+    
+    /**
+     * Calculates the perimeter of the Circle
+     * @return the perimeter of the Circle.
+     */
     @Override
     public int getPerimeter() {
         return (int)(2 * Math.PI * getRadius());
     }
-
+    
+    /**
+     * Calculates the radius of the Circle
+     * @return the radius of the Circle.
+     */
     public double getRadius() {
         return this.diameter / 2;
     }
     
+    /**
+     * Getter for the diameter of the Circle
+     * @return the diameter of the Circle.
+     */
     public int getDiameter() {
         return diameter;
     }
-
-    @Override
-    public int hashCode(){
-        return 0;
-    }
-
+    
     /**
-     * @param o Object for comparison, objects compared by area first and perimeter second.
-     * @return True if all attributes and type is the same, regardless of position.
+     * Calculates the hash code for the Object
+     * @return the hash code for the Object.
      */
     @Override
-    public boolean equals(Object o){
-        return false;
+    public int hashCode() {
+        return 0;
     }
 }
