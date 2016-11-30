@@ -19,6 +19,7 @@ public class Circle extends GeometricalShape {
         super(x, y, color);
         this.diameter = diameter;
     }
+    
     /**
      * Constructor for the Circle
      * @param f Geometrical form used for x and y coordinates of the left uppermost corner of the narrowest possible Rectangle surrounding the Circle
@@ -29,34 +30,41 @@ public class Circle extends GeometricalShape {
         super(f.getX(), f.getY(), color);
         this.diameter = diameter;
     }
-
+    
+    /**
+     * 
+     */
     @Override
     public int getArea() {
-        return 0;
+        return (int)(Math.pow(getRadius(), 2) * Math.PI);
     }
 
     @Override
     public void fill(Graphics g) {
-
+        g.drawOval(this.x, this.y, this.diameter, this.diameter)
     }
+    
     @Override
     public int getWidth() {
-        return 0;
+        return diameter;
     }
 
     @Override
     public int getHeight() {
-        return 0;
+        return diameter;
     }
-
 
     @Override
     public int getPerimeter() {
-        return 0;
+        return (int)(2 * Math.PI * getRadius());
     }
 
+    public double getRadius() {
+        return this.diameter / 2;
+    }
+    
     public int getDiameter() {
-        return 0;
+        return diameter;
     }
 
     @Override
